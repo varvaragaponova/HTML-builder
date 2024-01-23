@@ -6,15 +6,19 @@ const copyFilesFolder = 'files-copy';
 fs.access(path.join(__dirname, copyFilesFolder), (err) => {
   if (!err) {
     fs.readdir(path.join(__dirname, copyFilesFolder), (err, files) => {
+      if (err) {
+        console.log(err);
+        return;
+      }
       files.forEach((file) => {
         fs.unlink(path.join(__dirname, copyFilesFolder, file), (err) => {
           if (err) {
             console.log(err);
             return;
           }
-          copyFiles();
         });
       });
+      copyFiles();
     });
     // console.log('Directory exists');
     // return;
