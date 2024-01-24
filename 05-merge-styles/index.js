@@ -16,7 +16,7 @@ fs.readdir(
 
     for (let file of files) {
       if (!file.isFile() || file.name.split('.')[1] !== 'css') {
-        return;
+        continue;
       }
 
       const readStream = fs.createReadStream(
