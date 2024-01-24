@@ -20,7 +20,7 @@ fs.readdir(path.join(__dirname, 'secret-folder'), (error, files) => {
 
       const name = file.split('.')[0];
       const extention = file.split('.')[1];
-      console.log(`${name}-${extention}-${Math.ceil(stats.size / 1024)}`);
+      console.log(`${name}-${extention}-${Math.ceil(stats.size / 1024)} kB`);
     });
   });
 });
