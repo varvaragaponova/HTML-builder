@@ -15,7 +15,7 @@ rl.on('line', (input) => {
     return;
   }
 
-  writeStream.write(input);
+  writeStream.write(input + '\n');
 });
 
 process.on('SIGINT', () => {
