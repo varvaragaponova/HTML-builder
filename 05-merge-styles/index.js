@@ -15,7 +15,7 @@ fs.readdir(
     }
 
     for (let file of files) {
-      if (!file.isFile() || file.name.split('.')[1] !== 'css') {
+      if (!file.isFile() || file.name.split('.')[1].toLowerCase() !== 'css') {
         continue;
       }
 
