@@ -11,6 +11,7 @@ rl.on('line', (input) => {
   if (input.toLowerCase() === 'exit') {
     console.log('Program finished');
     rl.close();
+    writeStream.end();
     return;
   }
 
@@ -20,4 +21,5 @@ rl.on('line', (input) => {
 process.on('SIGINT', () => {
   console.log('Program finished');
   rl.close();
+  writeStream.end();
 });
